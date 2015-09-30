@@ -1,5 +1,14 @@
 <krpano version="1.18" bgcolor="0x000000">
 
+	<events name="nadirlogorotation"
+				onviewchange="if(hotspot[nadirlogo].rotatewithview, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
+				onloadcomplete="jscall(console.log('hello world!'));"
+				/>
+
+	<action name="helloworld" type="Javascript"><![CDATA[
+    console.log("Hello world!");
+]]></action>
+
 	<!-- include the videoplayer plugin and load the video (use a low res video for iOS) -->
 	<plugin name="video"
 	        url.flash="%SWFPATH%/plugins/videoplayer.swf"
@@ -28,5 +37,18 @@
 
 	<!-- set the default view - a light fisheye projection -->
 	<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="75" fovmax="150" fisheye="0.35" />
+
+		<!-- nadir logo (distored hotspot) -->
+	<hotspot name="nadirlogo"
+					 url="krpano-roundlogo.png"
+					 ath="0"
+					 atv="90"
+					 distorted="true"
+					 scale="1.0"
+					 rotate="0.0"
+					 rotatewithview="false"
+					 onclick="switch(rotatewithview); invalidatescreen();"
+					 />
+
 
 </krpano>
