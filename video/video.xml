@@ -1,8 +1,10 @@
 <krpano version="1.18" bgcolor="0x000000">
 
+	<security cors="">
+	</security>
+
 	<events name="nadirlogorotation"
 				onviewchange="if(hotspot[nadirlogo].rotatewithview, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
-				onloadcomplete="jscall(console.log('hello world!'));"
 				/>
 
 	<action name="helloworld" type="Javascript"><![CDATA[
