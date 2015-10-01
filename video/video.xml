@@ -1,6 +1,7 @@
 <krpano version="1.18" bgcolor="0x000000">
 
 	<security cors="">
+		<allowdomain domain="" />
 	</security>
 
 	<events name="nadirlogorotation"
