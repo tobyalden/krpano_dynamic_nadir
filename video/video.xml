@@ -5,7 +5,7 @@
 	</security>
 
 	<events name="nadirlogorotation"
-				onviewchange="if(hotspot[nadirlogo].rotatewithview, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
+				onviewchange="if(true, set(hotspot[nadirlogo].rotate,get(view.hlookat)) );"
 				/>
 
 	<action name="helloworld" type="Javascript"><![CDATA[
