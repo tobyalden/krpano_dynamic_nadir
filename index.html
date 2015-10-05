@@ -26,22 +26,25 @@
 		function krpanoReady(krpano)
 		{
 			krpanoGlobal = krpano;
-		  console.log('hello world!');
+		  console.log('greetings world!');
 			$.ajax({
 					type: "GET",
-					url: 'https://randimg.herokuapp.com/',
+					url: 'http://randimg.herokuapp.com/images.json',
 					dataType: "jsonp",
 					contentType: "application/jsonp",
 					jsonpCallback: 'setNadir'
 			})
 		}
-
 		function setNadir(responseJSON) {
-			var imgUrl = responseJSON.url;
-			console.log("Image URL: " + imgUrl);
-			krpanoGlobal.call("set(hotspot[nadirlogo].url, " + imgUrl + ")");
-		}
 
+			var imgUrl = responseJSON.url
+			var clickthroughUrl = responseJSON.clickthrough
+			console.log("Image URL: " + imgUrl);
+			console.log("Clickthrough URL: " + clickthroughUrl);
+			krpanoGlobal.call("set(hotspot[nadirlogo].url, " + imgUrl + ")");
+			krpanoGlobal.call('set(hotspot[nadirlogo].onclick, openurl(http://randimg.herokuapp.com/images/' + responseJSON.id + '))');
+			// This will need to change on deployment
+		}
 	</script>
 </div>
 
